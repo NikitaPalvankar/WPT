@@ -1,0 +1,44 @@
+<!-- 1) create index.html. Display Headings with h1 tag and display current date and time using iframe 
+  2)in same page Hyperlink to Calculate in Calculate.html. 
+ accept data in 1 text field validate data is enter or not 
+ if data is in number format display table of that number in 1 page  -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #b1{
+            background-color: burlywood;
+            text-align: center;
+            color:rgb(27, 27, 117);
+            margin-top: 8%;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body id="b1">
+    <h1>Welcome to our page.</h1>
+    <iframe src="time.html" width="200" height="110" frameborder="0"></iframe><br>
+
+    <a href="calculate.html">Calculate</a>
+    <div id="output"></div>
+
+    <script>
+        let para = new URLSearchParams(window.location.search)
+        let num = parseInt(para.get("num"))
+                         
+        if(!isNaN(num)){
+            let table ="\n"
+            for(let i=1;i<10;i++){
+                table+= `${num} * ${i} = ${num*i} \n`
+            }
+            document.getElementById("output").innerText =  table;
+        }
+
+
+    </script>
+
+
+</body>
+</html>

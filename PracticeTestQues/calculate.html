@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #b1 {
+
+        background-color:burlywood;
+        text-align: center;
+        margin-top: 15%;
+        font-size: large;
+      }
+      
+    </style>
+  </head>
+  <body id="b1">
+    Enter a number to display table of that number: <br><br> <input type="number" id="num" placeholder="Enter a number"><br><br>
+    <button id="btn" onclick="update()">Submit</button>
+
+    <script>
+      function update() {
+        let number = document.getElementById("num").value;
+        if (number === "") {
+          alert("Enter a number");
+        } else {
+          window.location.href = "index.html?num=" + number;
+        }
+      }
+    </script>
+  </body>
+</html>
